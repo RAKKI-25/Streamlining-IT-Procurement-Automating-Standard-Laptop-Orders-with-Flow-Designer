@@ -27,10 +27,25 @@ The objective is to automate the procurement and fulfillment of standard laptop 
 
 ---
 
-### Step 2: Configure the Trigger
-To ensure the flow does **not** trigger prematurely on submission, but only when the required approval is satisfied on the associated Requested Item:
+### Step 2: Configure the Trigger & Approval Condition
 
-1. In the Flow Designer canvas, click **Add a Trigger**.
+Depending on the configuration in your ServiceNow training instance, select either **Approach A** (Service Catalog Trigger with Catalog Item Association) or **Approach B** (Record Trigger on `sc_req_item`):
+
+#### Approach A: Service Catalog Trigger (Recommended by SkillWallet Instructions)
+1. Click **Add a Trigger**.
+2. Select **Service Catalog** (under ServiceNow Core).
+3. Click **Done**.
+4. In the canvas under **Actions**, click **Add an Action, Flow Logic, or Subflow** > **Action**.
+5. Select **ServiceNow Core > Wait For Condition**:
+   - **Record**: Drag data pill `Trigger - Service Catalog > Requested Item Record` (`{{Trigger.request_item}}`)
+   - **Table**: `Requested Item [sc_req_item]`
+   - **Conditions**: `[Approval]` `[is]` `Approved`
+6. Click **Done**.
+
+> *Note*: If your instance uses an explicit approval step inside Flow Designer, you can also add **ServiceNow Core > Ask For Approval** on `Trigger -> Requested Item Record`, requiring approval from the requested item's manager/approver before proceeding to the task creation.
+
+#### Approach B: Record Trigger on `sc_req_item`
+1. Click **Add a Trigger**.
 2. Select **Record > Updated** (or **Created or Updated**).
 3. Set the Trigger Fields:
    - **Table**: `Requested Item [sc_req_item]`
@@ -43,18 +58,15 @@ To ensure the flow does **not** trigger prematurely on submission, but only when
 4. Set **Run Trigger**: `Once` (or `For each unique change`).
 5. Click **Done**.
 
-> **Rationale**: Using `Approval changes to Approved` guarantees that the flow remains idle upon initial request submission and only triggers at the exact moment the approval status is granted.
-
 ---
 
 ### Step 3: Add Action — Create Catalog Task
-1. Under the **Actions** section of the canvas, click **Add an Action, Flow Logic, or Subflow**.
-2. Click **Action**.
-3. In the Action search palette, select **ServiceNow Core** (or **Service Catalog**) > **Create Catalog Task**.
-4. Configure the Action inputs using dynamic Data Pills:
+1. Under the Actions section of the canvas, click **Add an Action, Flow Logic, or Subflow** > **Action**.
+2. In the Action search palette, select **ServiceNow Core** (or **Service Catalog**) > **Create Catalog Task**.
+3. Configure the Action inputs using dynamic Data Pills:
    - **Requested Item Record**:
      - Drag and drop the **Requested Item Record** data pill from the Data Panel on the right:
-       `Trigger - Record Updated > Requested Item Record` (`{{Trigger.current}}`)
+       `Trigger > Requested Item Record` (`{{Trigger.current}}` or `{{Trigger.request_item}}`)
    - **Short Description**:
      ```text
      Configure Standard Laptop
@@ -67,7 +79,7 @@ To ensure the flow does **not** trigger prematurely on submission, but only when
      - Click **+ Add field value**
      - Field: `Assignment group` | Value: `Hardware` *(Select the existing "Hardware" group record)*
      - Field: `State` | Value: `Open` (or `1`)
-5. Click **Done**.
+4. Click **Done**.
 
 ---
 
@@ -80,10 +92,21 @@ To ensure the flow does **not** trigger prematurely on submission, but only when
 
 ---
 
-### Step 5: Test with a Real Catalog Request
+### Step 5: Associate Flow with Standard Laptop Catalog Item
+*(Required when using Approach A)*
+1. In the Filter Navigator, navigate to **Service Catalog > Catalog Definitions > Maintain Items**.
+2. Search for and open **Standard Laptop**.
+3. In the form, scroll down to the **Process Engine** tab / section:
+   - Set **Flow**: `Standard Laptop Task`
+   - If there is an existing Workflow or Execution Plan populated, remove it so that Flow Designer controls the fulfillment.
+4. Click **Update** or **Save**.
+
+---
+
+### Step 6: Test with a Real Catalog Request
 1. In the Filter Navigator, navigate to **Self-Service > Service Catalog** (or the Service Portal at `/sp`).
 2. Search for the catalog item **Standard Laptop**.
-3. Select **Standard Laptop** and fill out any mandatory options (e.g., storage, memory, or user selection).
+3. Select **Standard Laptop** and fill out any options.
 4. Click **Order Now**.
 5. A Request record (`REQ...`) and Requested Item record (`RITM...`) are generated.
 6. Open the generated **Requested Item** (e.g., `RITM0010001`).
@@ -94,7 +117,7 @@ To ensure the flow does **not** trigger prematurely on submission, but only when
 
 ---
 
-### Step 6: Verify the Result
+### Step 7: Verify the Result
 1. Re-open the Requested Item (`RITM...`).
 2. Scroll down to the **Catalog Tasks** related list.
 3. Verify the generated task:
