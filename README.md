@@ -2,6 +2,7 @@
 
 [![ServiceNow](https://img.shields.io/badge/ServiceNow-Flow%20Designer-green)](https://www.servicenow.com/)
 [![Milestone 1 Status](https://img.shields.io/badge/Milestone%201-Verified%20%26%20Complete-brightgreen)](#milestone-1-flow-designer-automation)
+[![Milestone 2 Status](https://img.shields.io/badge/Milestone%202-Verified%20%26%20Complete-brightgreen)](#milestone-2-flow-assignment-to-catalog-item-completed)
 [![Live Verification](https://img.shields.io/badge/Live%20Verification-COMPLETED-brightgreen)](#status-breakdown)
 
 An enterprise-grade ServiceNow Flow Designer solution designed to automate IT procurement and fulfillment for **Standard Laptop** catalog orders. By automating task generation and intelligent routing to the **Hardware** assignment group immediately upon request approval, this solution eliminates manual fulfillment bottlenecks, improves processing speed, and ensures consistency.
@@ -20,6 +21,7 @@ An enterprise-grade ServiceNow Flow Designer solution designed to automate IT pr
 | **Video Evidence** | ✅ **COMPLETED** | Configuration walkthrough preserved in `Milestone_1_Flow_Completion.mp4`. |
 | **Live Instance Configuration** | ✅ **COMPLETED** | Flow configured, activated, and linked via Process Engine in ServiceNow. |
 | **Live End-to-End Verification** | ✅ **COMPLETED** | Verified live: `REQ0010001` → `RITM0010001` → `SCTASK0010002` (Hardware group). |
+| **Milestone 2: Flow Assignment** | ✅ **COMPLETED** | Standard Laptop Catalog Item Process Engine assigned to `Standard Laptop task`. |
 
 ---
 
@@ -62,25 +64,45 @@ flowchart TD
 
 ---
 
+## 🔗 Milestone 2: Flow Assignment to Catalog Item (COMPLETED)
+
+### Activity 1: Flow Assignment to Standard Laptop Service Catalog
+The `Standard Laptop Task` flow was linked to the **Standard Laptop** Catalog Item under the **Process Engine** configuration tab:
+
+| Field | Verified Value |
+| :--- | :--- |
+| **Catalog Item** | `Standard Laptop` |
+| **Process Engine** | `Flow` |
+| **Flow** | `Standard Laptop task` |
+| **Workflow** | *(blank)* |
+| **Execution Plan** | *(blank)* |
+
+- **Evidence Document**: [`milestones/milestone-2-flow-assignment/evidence/Milestone_2_Flow_Assignment_Evidence.docx`](milestones/milestone-2-flow-assignment/evidence/Milestone_2_Flow_Assignment_Evidence.docx) (contains the verified screenshot from the active ServiceNow instance)
+
+---
+
 ## 📂 Repository Structure
 
 ```text
 .
 ├── README.md                                          # Project documentation and architecture
 └── milestones/
-    └── milestone-1-flow/
-        ├── FLOW_DESIGNER_IMPLEMENTATION_STEPS.md     # Step-by-step UI configuration guide
-        ├── README.md                                 # Milestone 1 overview and verification index
-        ├── docs/
-        │   └── MILESTONE_1_COMPLETION_REPORT.md      # Full completion report with live runtime records
-        ├── evidence/
-        │   └── Milestone_1_Flow_Screenshot_Evidence.docx # Consolidated 6-evidence DOCX
-        ├── scripts/
-        │   └── verify_standard_laptop_flow.js        # Automated verification script for ServiceNow
-        ├── update_sets/
-        │   └── Standard_Laptop_Task_Flow_UpdateSet.xml # Importable ServiceNow Update Set
-        └── videos/
-            └── Milestone_1_Flow_Completion.mp4       # Video evidence of flow configuration
+    ├── milestone-1-flow/
+    │   ├── FLOW_DESIGNER_IMPLEMENTATION_STEPS.md     # Step-by-step UI configuration guide
+    │   ├── README.md                                 # Milestone 1 overview and verification index
+    │   ├── docs/
+    │   │   └── MILESTONE_1_COMPLETION_REPORT.md      # Full completion report with live runtime records
+    │   ├── evidence/
+    │   │   └── Milestone_1_Flow_Screenshot_Evidence.docx # Consolidated 6-evidence DOCX
+    │   ├── scripts/
+    │   │   └── verify_standard_laptop_flow.js        # Automated verification script for ServiceNow
+    │   ├── update_sets/
+    │   │   └── Standard_Laptop_Task_Flow_UpdateSet.xml # Importable ServiceNow Update Set
+    │   └── videos/
+    │       └── Milestone_1_Flow_Completion.mp4       # Video evidence of flow configuration
+    └── milestone-2-flow-assignment/
+        └── evidence/
+            └── Milestone_2_Flow_Assignment_Evidence.docx # Milestone 2 flow assignment evidence
 ```
 
 ---
