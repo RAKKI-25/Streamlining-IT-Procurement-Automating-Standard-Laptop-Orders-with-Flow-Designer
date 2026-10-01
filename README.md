@@ -78,6 +78,9 @@ The `Standard Laptop Task` flow was linked to the **Standard Laptop** Catalog It
 | **Execution Plan** | *(blank)* |
 
 - **Evidence Document**: [`milestones/milestone-2-flow-assignment/evidence/Milestone_2_Flow_Assignment_Evidence.docx`](milestones/milestone-2-flow-assignment/evidence/Milestone_2_Flow_Assignment_Evidence.docx) (contains the verified screenshot from the active ServiceNow instance)
+- **Completion Video**: [`milestones/milestone-2-flow-assignment/videos/Milestone_2_Flow_Assignment_Completion.mp4`](milestones/milestone-2-flow-assignment/videos/Milestone_2_Flow_Assignment_Completion.mp4) (screen recording of the catalog item Process Engine configuration)
+- **Implementation Guide**: [`milestones/milestone-2-flow-assignment/FLOW_ASSIGNMENT_IMPLEMENTATION_STEPS.md`](milestones/milestone-2-flow-assignment/FLOW_ASSIGNMENT_IMPLEMENTATION_STEPS.md)
+- **Completion Report**: [`milestones/milestone-2-flow-assignment/docs/MILESTONE_2_COMPLETION_REPORT.md`](milestones/milestone-2-flow-assignment/docs/MILESTONE_2_COMPLETION_REPORT.md)
 
 ---
 
@@ -101,8 +104,14 @@ The `Standard Laptop Task` flow was linked to the **Standard Laptop** Catalog It
     │   └── videos/
     │       └── Milestone_1_Flow_Completion.mp4       # Video evidence of flow configuration
     └── milestone-2-flow-assignment/
-        └── evidence/
-            └── Milestone_2_Flow_Assignment_Evidence.docx # Milestone 2 flow assignment evidence
+        ├── FLOW_ASSIGNMENT_IMPLEMENTATION_STEPS.md   # Step-by-step flow assignment guide
+        ├── README.md                                 # Milestone 2 overview and configuration report
+        ├── docs/
+        │   └── MILESTONE_2_COMPLETION_REPORT.md      # Milestone 2 completion report
+        ├── evidence/
+        │   └── Milestone_2_Flow_Assignment_Evidence.docx # Milestone 2 flow assignment evidence
+        └── videos/
+            └── Milestone_2_Flow_Assignment_Completion.mp4 # Video evidence of flow assignment
 ```
 
 ---
