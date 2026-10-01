@@ -8,21 +8,17 @@ This milestone establishes the automated fulfillment flow for **Standard Laptop*
 ## Directory Structure
 
 ```text
-milestones/milestone-1-flow/
-├── docs/
-│   └── MILESTONE_1_COMPLETION_REPORT.md
-├── evidence/
-│   └── Milestone_1_Flow_Screenshot_Evidence.docx
-├── screenshots/
-│   └── README.md
-├── scripts/
-│   └── verify_standard_laptop_flow.js
-├── update_sets/
-│   └── Standard_Laptop_Task_Flow_UpdateSet.xml
-├── videos/
-│   └── Milestone_1_Flow_Completion.mp4
-├── FLOW_DESIGNER_IMPLEMENTATION_STEPS.md
-└── README.md
+milestones/
+└── milestone-1-flow/
+    ├── docs/
+    ├── evidence/
+    │   └── Milestone_1_Flow_Screenshot_Evidence.docx
+    ├── scripts/
+    ├── update_sets/
+    ├── videos/
+    │   └── Milestone_1_Flow_Completion.mp4
+    ├── FLOW_DESIGNER_IMPLEMENTATION_STEPS.md
+    └── README.md
 ```
 
 ---
@@ -34,7 +30,6 @@ milestones/milestone-1-flow/
 | **`FLOW_DESIGNER_IMPLEMENTATION_STEPS.md`** | Step-by-step configuration manual for setting up the flow in ServiceNow Flow Designer. |
 | **`docs/`** | Detailed completion report and technical specification ([`MILESTONE_1_COMPLETION_REPORT.md`](docs/MILESTONE_1_COMPLETION_REPORT.md)). |
 | **`evidence/`** | Consolidated document containing all 6 verified screenshots ([`Milestone_1_Flow_Screenshot_Evidence.docx`](evidence/Milestone_1_Flow_Screenshot_Evidence.docx)). |
-| **`screenshots/`** | Screenshot capture checklist and verification guidelines ([`README.md`](screenshots/README.md)). |
 | **`scripts/`** | Automated verification background script ([`verify_standard_laptop_flow.js`](scripts/verify_standard_laptop_flow.js)). |
 | **`update_sets/`** | Pre-built, importable ServiceNow Update Set XML ([`Standard_Laptop_Task_Flow_UpdateSet.xml`](update_sets/Standard_Laptop_Task_Flow_UpdateSet.xml)). |
 | **`videos/`** | Walkthrough and configuration video evidence ([`Milestone_1_Flow_Completion.mp4`](videos/Milestone_1_Flow_Completion.mp4)). |

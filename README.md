@@ -75,8 +75,6 @@ flowchart TD
         │   └── MILESTONE_1_COMPLETION_REPORT.md      # Full completion report with live runtime records
         ├── evidence/
         │   └── Milestone_1_Flow_Screenshot_Evidence.docx # Consolidated 6-evidence DOCX
-        ├── screenshots/
-        │   └── README.md                             # Evidence guide and checklist for mentor submission
         ├── scripts/
         │   └── verify_standard_laptop_flow.js        # Automated verification script for ServiceNow
         ├── update_sets/
