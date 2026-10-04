@@ -89,6 +89,8 @@ The `Standard Laptop Task` flow was linked to the **Standard Laptop** Catalog It
 ```text
 .
 ├── README.md                                          # Project documentation and architecture
+├── evidence/
+│   └── PROJECT_OVERALL_COMPLETION_DEMO.mp4           # Overall project completion demo video
 └── milestones/
     ├── milestone-1-flow/
     │   ├── FLOW_DESIGNER_IMPLEMENTATION_STEPS.md     # Step-by-step UI configuration guide
@@ -103,16 +105,24 @@ The `Standard Laptop Task` flow was linked to the **Standard Laptop** Catalog It
     │   │   └── Standard_Laptop_Task_Flow_UpdateSet.xml # Importable ServiceNow Update Set
     │   └── videos/
     │       └── Milestone_1_Flow_Completion.mp4       # Video evidence of flow configuration
-    └── milestone-2-flow-assignment/
-        ├── FLOW_ASSIGNMENT_IMPLEMENTATION_STEPS.md   # Step-by-step flow assignment guide
-        ├── README.md                                 # Milestone 2 overview and configuration report
+    ├── milestone-2-flow-assignment/
+    │   ├── FLOW_ASSIGNMENT_IMPLEMENTATION_STEPS.md   # Step-by-step flow assignment guide
+    │   ├── README.md                                 # Milestone 2 overview and configuration report
+    │   ├── docs/
+    │   │   └── MILESTONE_2_COMPLETION_REPORT.md      # Milestone 2 completion report
+    │   ├── evidence/
+    │   │   └── Milestone_2_Flow_Assignment_Evidence.docx # Milestone 2 flow assignment evidence
+    │   └── videos/
+    │       └── Milestone_2_Flow_Assignment_Completion.mp4 # Video evidence of flow assignment
+    └── milestone-3-verification/
         ├── docs/
-        │   └── MILESTONE_2_COMPLETION_REPORT.md      # Milestone 2 completion report
-        ├── evidence/
-        │   └── Milestone_2_Flow_Assignment_Evidence.docx # Milestone 2 flow assignment evidence
+        │   └── MILESTONE_3_Completion_Report.docx    # Milestone 3 completion report
         └── videos/
-            └── Milestone_2_Flow_Assignment_Completion.mp4 # Video evidence of flow assignment
+            └── Milestone_3_Service_Catalog_Completion.mp4 # Milestone 3 video evidence
 ```
+
+### 🎥 Overall Project Completion Demo
+- **Video Walkthrough**: [`evidence/PROJECT_OVERALL_COMPLETION_DEMO.mp4`](evidence/PROJECT_OVERALL_COMPLETION_DEMO.mp4) — Comprehensive end-to-end demonstration covering Flow Designer configuration, Catalog Item Process Engine linkage, and live request-to-task automation.
 
 ---
 
